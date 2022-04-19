@@ -11,9 +11,9 @@ const Login = () => {
   const navigate = useNavigate()
   const responseGoogle = response => {
     console.log({response})
-    localStorage.setItem('user', JSON.stringify(response.profileObj))
+    localStorage.setItem('user', JSON.stringify(response?.profileObj))
 
-    const { name, googleId, imageUrl } = response.profileObj
+    const { name, googleId, imageUrl } = response?.profileObj
 
     const doc = {
       _id: googleId,
@@ -55,7 +55,7 @@ const Login = () => {
                   onClick={renderProps.onClick}
                   disabled={renderProps.disabled}
                 >
-                  <FcGoogle className="mr-4" /> Sign in with Google
+                  <FcGoogle className="mr-4" /> Войти с Google
                 </button>
               )}
               onSuccess={responseGoogle}

@@ -31,7 +31,11 @@ const Feed = () => {
     }
   }, [categoryId])
 
-  if (loading) return <Spinner message="We are adding new ideas to your feed!" />
+  if (loading) return <Spinner message="Загружаем новые Пины в ленту!" />
+
+  if (!pins?.length) {
+    return <h2>Еще не создано ни одного Пина!</h2>
+  }
 
   return (
     <div>
